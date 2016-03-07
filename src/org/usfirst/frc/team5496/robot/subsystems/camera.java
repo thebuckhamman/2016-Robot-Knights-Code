@@ -59,7 +59,7 @@ public class camera extends Subsystem {
 		Distance above, negative for lower(2)*/
 	 public final double[] CAMERA_LAUNCHER_DISPLACEMENT = {0, -9.25, 0};
 	 
-	 /*NOTE: SUBJECT TO CHANGE GIVEN NEW INFORMATION
+	 /**NOTE: SUBJECT TO CHANGE GIVEN NEW INFORMATION
 	  * Standard displacement of launcher from point on floor directly below middle of goal
 	  * Launcher, from reference point, in inches:
 			Distance backwards(0), 
