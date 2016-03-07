@@ -40,19 +40,51 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
 	
+	/**
+	 * The driver controller
+	 */
 	public Joystick myJoystick1 = new Joystick(0);
+	/**
+	 * Ramp controller
+	 */
 	public Joystick myJoystick2 = new Joystick(1);
 	
-	public Talon leftDriveTalon1 = new Talon(2);  //2 is right
-	public Talon leftDriveTalon2 = new Talon(3);  //3 is left
-	public Talon rightDriveTalon1 = new Talon(0); // 0 is right
-	public Talon rightDriveTalon2 = new Talon(1); // 1 is left
+	/**
+	 * Left talon #1
+	 */
+	public Talon leftDriveTalon1 = new Talon(2);
+	/**
+	 * Left talon #2
+	 */
+	public Talon leftDriveTalon2 = new Talon(3);
+	/**
+	 * Right talon #1
+	 */
+	public Talon rightDriveTalon1 = new Talon(0);
+	/**
+	 * Right talon #2
+	 */
+	public Talon rightDriveTalon2 = new Talon(1);
 	
-	
+	/**
+	 * Ramp pitch controllr
+	 */
 	public CANTalon RampTalon = new CANTalon(1);
+	/**
+	 * Intake wheel
+	 */
 	public CANTalon IntakeTalon = new CANTalon(4);
+	/**
+	 * Assists loading and firing
+	 */
 	public CANTalon OutakeTalon = new CANTalon(0);
+	/**
+	 * Bottom firing motor
+	 */
 	public CANTalon bottomShootTalon = new CANTalon(2);
+	/**
+	 * Top firing motor
+	 */
 	public CANTalon topShootTalon = new CANTalon(3);
 	
 	public Servo leftServo = new Servo(5);
@@ -60,7 +92,15 @@ public class OI {
 	
 	public Encoder enc = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
 	
+	/**
+	 * Used to track the ramp state
+	 * true is up
+	 * false is down
+	 */
 	public boolean rampUp;
+	/**
+	 * Used for timing various things
+	 */
 	public double time;
 	public double originalServoValue;
 
