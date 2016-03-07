@@ -59,19 +59,6 @@ public class DriveTrain extends Subsystem {
     }
     
     /**
-     * Not used. Exists for no reason
-     */
-     //TODO: REMOVED
-    public int boostPower(boolean leftBumperPressed, boolean rightBumperPressed)
-    {
-    	if(leftBumperPressed && rightBumperPressed)
-    	{
-    		return 3;
-    	}
-    	return 1;
-    }
-    
-    /**
      * Again, never used. Should be removed.
      */
      //TODO: REMOVE
