@@ -8,11 +8,8 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 
 import org.usfirst.frc.team5496.robot.commands.DriveRobot;
-import org.usfirst.frc.team5496.robot.commands.Intake;
-import org.usfirst.frc.team5496.robot.commands.MoveRamp;
 import org.usfirst.frc.team5496.robot.commands.SameTime;
 import org.usfirst.frc.team5496.robot.commands.SampleGoalImage;
-import org.usfirst.frc.team5496.robot.commands.ShootBall;
 import org.usfirst.frc.team5496.robot.commands.UseRamp;
 import org.usfirst.frc.team5496.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5496.robot.subsystems.camera;
@@ -48,14 +45,7 @@ public class Robot extends IterativeRobot {
 	 * Used to drive robot
 	 */
 	public static DriveRobot driveRobot = new DriveRobot();
-	/**
-	 * TODO: REMOVE
-	 */
-	public static Intake intake = new Intake();
-	/**
-	 * TODO: REMOVE
-	 */
-	public static MoveRamp moveRamp = new MoveRamp();
+	
 	/**
 	 * Used to control the ramp
 	 */
@@ -65,10 +55,7 @@ public class Robot extends IterativeRobot {
 	 * Used to run UseRamp and drive robot at the same time
 	 */
 	public static SameTime sameTime = new SameTime();
-	/**
-	 * TODO: REMOVE
-	 */
-	public static ShootBall shootBall = new ShootBall();
+	
 	/**
 	 * Will be used for showing a rectangle where the goal should be on the camera image
 	 */
