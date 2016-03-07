@@ -8,15 +8,16 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class DriveTrain extends Subsystem {
-    
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
 	
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
     
+    /**
+     * Set the speed for the right talons
+     * @param rightYValue the new value of the right talons
+     */
     public double rightSpeed(double rightYValue)
     {	
     	if(rightYValue > 0.2)
@@ -34,6 +35,10 @@ public class DriveTrain extends Subsystem {
     	}
     }
     
+    /**
+     * Set the speed for the left talons
+     * @param leftYValue thew new value of the left talons
+     */
     public double leftSpeed(double leftYValue)
     {
     	if(leftYValue > 0.2)
@@ -52,7 +57,11 @@ public class DriveTrain extends Subsystem {
     		
     	
     }
-   
+    
+    /**
+     * Not used. Exists for no reason
+     */
+     //TODO: REMOVED
     public int boostPower(boolean leftBumperPressed, boolean rightBumperPressed)
     {
     	if(leftBumperPressed && rightBumperPressed)
@@ -62,6 +71,10 @@ public class DriveTrain extends Subsystem {
     	return 1;
     }
     
+    /**
+     * Again, never used. Should be removed.
+     */
+     //TODO: REMOVE
     public void setDriveType(int type)
     {
     	if(type == 1)
