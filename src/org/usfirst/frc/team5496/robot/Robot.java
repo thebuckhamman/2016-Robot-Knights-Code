@@ -30,30 +30,71 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
+	/**
+	 * Initializes and stores motors, joysticks, etc
+	 */
 	public static OI oi;
 	
+	/**
+	 * Used to control the left and right tank treads.
+	 */
 	public static DriveTrain driveTrain = new DriveTrain();
+	/**
+	 * Used to control camera
+	 */
 	public static camera cam;
 		
-	
+	/**
+	 * Used to drive robot
+	 */
 	public static DriveRobot driveRobot = new DriveRobot();
+	/**
+	 * TODO: REMOVE
+	 */
 	public static Intake intake = new Intake();
+	/**
+	 * TODO: REMOVE
+	 */
 	public static MoveRamp moveRamp = new MoveRamp();
+	/**
+	 * Used to control the ramp
+	 */
 	public static UseRamp useRamp = new UseRamp();
 	
+	/**
+	 * Used to run UseRamp and drive robot at the same time
+	 */
 	public static SameTime sameTime = new SameTime();
+	/**
+	 * TODO: REMOVE
+	 */
 	public static ShootBall shootBall = new ShootBall();
+	/**
+	 * Will be used for showing a rectangle where the goal should be on the camera image
+	 */
 	public static SampleGoalImage sampImage;
 	
+	/**
+	 * The array of points used to show the goal image
+	 */
 	NIVision.Point[] rectImage = 
 			 {cam.calculateCoordinate(cam.TOP_LEFT_TAPE_POINT_CAM),
 			  cam.calculateCoordinate(cam.TOP_RIGHT_TAPE_POINT_CAM),
 			  cam.calculateCoordinate(cam.BOTTOM_RIGHT_TAPE_POINT),
 			  cam.calculateCoordinate(cam.BOTTOM_LEFT_TAPE_POINT)};
-	//Auto position 1 - 4, 0 for simple auto
+	/**
+	 * Used for robot positioning
+	 * Auto position 1 - 4, 0 for simple auto
+	 */
 	public static int autoPosition = 0;
 	
+	/**
+	 * TODO: Remove?
+	 */
     Command autonomousCommand;
+    /**
+     * Used to organize running of functions
+     */
     SendableChooser chooser;
     /**
      * This function is run when the robot is first started up and should be
@@ -101,7 +142,9 @@ public class Robot extends IterativeRobot {
     public void disabledInit(){
     	oi.leftServo.set(oi.originalServoValue);    	oi.rightServo.set(oi.originalServoValue);
     }
-	
+	/**
+	 * Run when robot is disabled
+	 */
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
@@ -140,6 +183,9 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
     }
 
+    /**
+     * Used to start remote operation
+     */
     public void teleopInit() {
 		// This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
