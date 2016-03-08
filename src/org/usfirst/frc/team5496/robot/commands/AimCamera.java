@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5496.robot.commands;
 
-import org.usfirst.frc.team5496.robot.Robot;
+import org.usfirst.frc.team5496.robot.Robot;                                    *
 import org.usfirst.frc.team5496.robot.subsystems.camera;
 
 import com.ni.vision.NIVision;
@@ -48,7 +48,10 @@ public class AimCamera extends Command {
 		
 		for(int particleIndex = 0; particleIndex < numParticles; particleIndex++)
 		{
-			double particleArea = NIVision.imaqMeasureParticle(camera.frame2, particleIndex, 0, NIVision.MeasurementType.MT_AREA); 
+			double particleArea = 
+   			  NIVision.imaqMeasureParticle
+   			  (camera.frame2, particleIndex, 0, NIVision.MeasurementType.MT_AREA); 
+			
 			if(particleArea > bigParticleArea)
 			{
 				bigParticleIndex = particleIndex;
@@ -56,8 +59,11 @@ public class AimCamera extends Command {
 			}	
 		}
     	
-    	firstx = (int)NIVision.imaqMeasureParticle(camera.frame2, bigParticleIndex, 1, NIVision.MeasurementType.MT_FIRST_PIXEL_X);
-    	firsty = (int)NIVision.imaqMeasureParticle(camera.frame2, bigParticleIndex, 1, NIVision.MeasurementType.MT_FIRST_PIXEL_Y);
+    	firstx = (int)NIVision.imaqMeasureParticle(
+    	  camera.frame2, bigParticleIndex, 1, NIVision.MeasurementType.MT_FIRST_PIXEL_X);
+    	
+    	firsty = (int)NIVision.imaqMeasureParticle(
+    	  camera.frame2, bigParticleIndex, 1, NIVision.MeasurementType.MT_FIRST_PIXEL_Y);
     	firstPoint = new NIVision.Point(firstx, firsty);
     	
     	if(firsty >= (int)NIVision.imaqMeasureParticle(camera.frame2, bigParticleIndex, 1, NIVision.MeasurementType.MT_BOUNDING_RECT_TOP) + 5)
