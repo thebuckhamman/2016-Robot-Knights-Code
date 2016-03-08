@@ -110,9 +110,6 @@ public class Robot extends IterativeRobot {
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 
-		oi.rampUp = true;
-		oi.time = Timer.getFPGATimestamp();
-
 		// Test if robot can access camera methods. May just give up on the
 		// whole sample goal image thing
 		double[] exampleArray = cam.addArrays(cam.BOTTOM_LEFT_TAPE_POINT, cam.BOTTOM_LEFT_TAPE_POINT);

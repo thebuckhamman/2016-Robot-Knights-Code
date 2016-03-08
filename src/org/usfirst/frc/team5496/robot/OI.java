@@ -21,13 +21,4 @@ public class OI {
 	public Joystick myJoystick2 = new Joystick(1);
 
 	public Encoder enc = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
-
-	/**
-	 * Used to track the ramp state true is up false is down
-	 */
-	public boolean rampUp;
-	/**
-	 * Used for timing various things
-	 */
-	public double time;
 }
