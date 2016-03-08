@@ -1,6 +1,5 @@
 package org.usfirst.frc.team5496.robot.subsystems;
 
-import org.usfirst.frc.team5496.robot.Robot;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -53,34 +52,7 @@ public class DriveTrain extends Subsystem {
     	else
     	{
     	return 0;
-    	}
-    		
-    	
-    }
-    
-    /**
-     * Again, never used. Should be removed.
-     */
-     //TODO: REMOVE
-    public void setDriveType(int type)
-    {
-    	if(type == 1)
-    	{
-    		Robot.oi.leftServo.setAngle(Robot.oi.originalServoValue);
-    		Robot.oi.rightServo.setAngle(Robot.oi.originalServoValue);
-    	}
-    	else if(type == 2)
-    	{
-    		Robot.oi.leftServo.setAngle(Robot.oi.originalServoValue + 20);
-        	Robot.oi.rightServo.setAngle(Robot.oi.originalServoValue + 20);    	
-        }
-    	else
-    	{
-    		System.out.println("Error: Choose either type 1 or 2");
-    	}
-    	
-    }
-    	
-   
+    	}   	
+    }   
 }
 

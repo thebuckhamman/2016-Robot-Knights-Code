@@ -18,10 +18,8 @@ public class DriveRobot extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.driveTrain.setDriveType(1);
     	driveType = 1;
     	turboheld = false;
-    	double originalServoValue = Robot.oi.leftServo.get();
     }
 
     // Called repeatedly when this Command is scheduled to run

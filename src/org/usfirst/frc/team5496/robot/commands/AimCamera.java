@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5496.robot.commands;
 
-import org.usfirst.frc.team5496.robot.Robot;                                    *
+import org.usfirst.frc.team5496.robot.Robot;                                    
 import org.usfirst.frc.team5496.robot.subsystems.camera;
 
 import com.ni.vision.NIVision;
@@ -70,7 +70,7 @@ public class AimCamera extends Command {
     	{
     		robotRight = true;
     	}
-    	else
+    	else 
     	{
     		robotRight = false;
     	}

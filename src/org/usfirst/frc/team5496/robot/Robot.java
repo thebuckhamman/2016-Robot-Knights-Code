@@ -1,12 +1,5 @@
 package org.usfirst.frc.team5496.robot;
 
-import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
-
 import org.usfirst.frc.team5496.robot.commands.DriveRobot;
 import org.usfirst.frc.team5496.robot.commands.SameTime;
 import org.usfirst.frc.team5496.robot.commands.SampleGoalImage;
@@ -16,6 +9,10 @@ import org.usfirst.frc.team5496.robot.subsystems.camera;
 
 import com.ni.vision.NIVision;
 
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -90,17 +87,19 @@ public class Robot extends IterativeRobot {
 		try{
 			cam = new camera();
 		}
-		catch(Throwable t)
+		catch(Exception e)
 		{
-			System.out.println("Camera constructor is the problem: " + t.toString());
+			System.out.println("Camera constructor is the problem: ");
+			e.printStackTrace();
 		}
 		
 		try{
 			sampImage = new SampleGoalImage();
 		}
-		catch(Throwable t)
+		catch(Exception e)
 		{
-			System.out.println("SampleGoal contructing is problem: " + t.toString());
+			System.out.println("SampleGoal contructing is problem: ");
+			e.printStackTrace();
 		}
 		
 		
@@ -111,7 +110,6 @@ public class Robot extends IterativeRobot {
         
         oi.rampUp = true;
         oi.time = Timer.getFPGATimestamp();
-        oi.originalServoValue = oi.leftServo.get();
         
         //Test if robot can access camera methods. May just give up on the whole sample goal image thing
         double[] exampleArray = cam.addArrays(cam.BOTTOM_LEFT_TAPE_POINT, cam.BOTTOM_LEFT_TAPE_POINT);
@@ -124,7 +122,7 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
-    	oi.leftServo.set(oi.originalServoValue);    	oi.rightServo.set(oi.originalServoValue);
+    	
     }
 	/**
 	 * Run when robot is disabled

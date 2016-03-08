@@ -1,13 +1,9 @@
 package org.usfirst.frc.team5496.robot;
 
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.buttons.Button;
-import org.usfirst.frc.team5496.robot.commands.DriveRobot;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -62,9 +58,6 @@ public class OI {
 	 */
 	public CANTalon topShootTalon = new CANTalon(3);
 	
-	public Servo leftServo = new Servo(5);
-	public Servo rightServo = new Servo(4);
-	
 	public Encoder enc = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
 	
 	/**
@@ -77,8 +70,6 @@ public class OI {
 	 * Used for timing various things
 	 */
 	public double time;
-	public double originalServoValue;
-
 }
 
 
