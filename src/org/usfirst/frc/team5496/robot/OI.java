@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.Talon;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-   
+
 	/**
 	 * The driver controller
 	 */
@@ -19,24 +19,7 @@ public class OI {
 	 * Ramp controller
 	 */
 	public Joystick myJoystick2 = new Joystick(1);
-	
-	/**
-	 * Left talon #1
-	 */
-	public Talon leftDriveTalon1 = new Talon(2);
-	/**
-	 * Left talon #2
-	 */
-	public Talon leftDriveTalon2 = new Talon(3);
-	/**
-	 * Right talon #1
-	 */
-	public Talon rightDriveTalon1 = new Talon(0);
-	/**
-	 * Right talon #2
-	 */
-	public Talon rightDriveTalon2 = new Talon(1);
-	
+
 	/**
 	 * Ramp pitch controllr
 	 */
@@ -57,13 +40,11 @@ public class OI {
 	 * Top firing motor
 	 */
 	public CANTalon topShootTalon = new CANTalon(3);
-	
+
 	public Encoder enc = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
-	
+
 	/**
-	 * Used to track the ramp state
-	 * true is up
-	 * false is down
+	 * Used to track the ramp state true is up false is down
 	 */
 	public boolean rampUp;
 	/**
@@ -71,5 +52,3 @@ public class OI {
 	 */
 	public double time;
 }
-
-
