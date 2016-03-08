@@ -31,6 +31,7 @@ public class Auto extends Command {
 	public Auto() {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
+		requires(Robot.drive);
 	}
 
 	// Called just before this Command runs the first time

@@ -28,9 +28,13 @@ public class AimCamera extends Command {
 	public AimCamera() {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
+		requires(Robot.drive);
+		requires(Robot.cam);
 	}
 
-	// Called just before this Command runs the first time
+	/**
+	 * Called when the command runs the first time
+	 */
 	protected void initialize() {
 		pixelErrorRange = 5;
 	}
@@ -67,15 +71,6 @@ public class AimCamera extends Command {
 			robotRight = false;
 		}
 
-		/*
-		 * if(robotRight) { Robot.oi.leftDriveTalon1.set(-0.5);
-		 * Robot.oi.leftDriveTalon2.set(-0.5);
-		 * Robot.oi.rightDriveTalon1.set(-0.5 * 0.92);
-		 * Robot.oi.rightDriveTalon2.set(-0.5 * 0.92); } else {
-		 * Robot.oi.leftDriveTalon1.set(0.5); Robot.oi.leftDriveTalon2.set(0.5);
-		 * Robot.oi.rightDriveTalon1.set(0.5 * 0.92);
-		 * Robot.oi.rightDriveTalon2.set(0.5 * 0.92); }
-		 */
 		if (robotRight) {
 			Robot.drive.setLeftSpeed(-0.5);
 			Robot.drive.setRightSpeed(-0.5 * 0.92);
@@ -85,17 +80,24 @@ public class AimCamera extends Command {
 		}
 	}
 
-	// Make this return true when this Command no longer needs to run execute()
+	/**
+	 * @return true when the command is completed and no longer needs to run
+	 */
 	protected boolean isFinished() {
 		return false;
 	}
 
-	// Called once after isFinished returns true
+	/**
+	 * Run when AimCamera has finished.
+	 */
 	protected void end() {
+		
 	}
 
-	// Called when another command which requires one or more of the same
-	// subsystems is scheduled to run
+	/**
+	 * Called when the command is interrupted by another command needing the same subsystems
+	 */
 	protected void interrupted() {
+		
 	}
 }

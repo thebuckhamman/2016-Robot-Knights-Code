@@ -15,6 +15,7 @@ public class DriveRobot extends Command {
 	public DriveRobot() {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
+		requires(Robot.drive);
 	}
 
 	// Called just before this Command runs the first time
@@ -33,18 +34,26 @@ public class DriveRobot extends Command {
 
 	}
 
-	// Make this return true when this Command no longer needs to run execute()
+	/**
+	 * @returns true when the command no longer needs to run execute(). Since this is a class that always needs to run to drive, it always returns false.
+	 */
 	protected boolean isFinished() {
 
 		return false;
 	}
 
-	// Called once after isFinished returns true
+	/**
+	 * Called when the command no longer will run.
+	 * Stops the robot.
+	 */
 	protected void end() {
+		Robot.drive.setLeftSpeed(0);
+		Robot.drive.setRightSpeed(0);
 	}
 
-	// Called when another command which requires one or more of the same
-	// subsystems is scheduled to run
+	/**
+	 * Runs when another command needs the subsystems that this command uses.
+	 */
 	protected void interrupted() {
 	}
 }

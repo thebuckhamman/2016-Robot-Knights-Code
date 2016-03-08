@@ -1,7 +1,7 @@
 package org.usfirst.frc.team5496.robot;
 
 import org.usfirst.frc.team5496.robot.commands.DriveRobot;
-import org.usfirst.frc.team5496.robot.commands.SameTime;
+import org.usfirst.frc.team5496.robot.commands.DriveRobotUseRamp;
 import org.usfirst.frc.team5496.robot.commands.SampleGoalImage;
 import org.usfirst.frc.team5496.robot.commands.UseRamp;
 import org.usfirst.frc.team5496.robot.subsystems.Drive;
@@ -53,7 +53,7 @@ public class Robot extends IterativeRobot {
 	/**
 	 * Used to run UseRamp and drive robot at the same time
 	 */
-	public static SameTime sameTime = new SameTime();
+	public static DriveRobotUseRamp sameTime = new DriveRobotUseRamp();
 
 	/**
 	 * Will be used for showing a rectangle where the goal should be on the
