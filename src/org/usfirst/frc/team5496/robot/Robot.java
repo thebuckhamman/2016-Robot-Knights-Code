@@ -75,10 +75,7 @@ public class Robot extends IterativeRobot {
 	 */
 	public static int autoPosition = 0;
 	
-	/**
-	 * TODO: Remove?
-	 */
-    Command autonomousCommand;
+	
     /**
      * Used to organize running of functions
      */
@@ -146,7 +143,7 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
-        autonomousCommand = (Command) chooser.getSelected();
+       
         
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
@@ -160,7 +157,6 @@ public class Robot extends IterativeRobot {
 		} */
     	
     	// schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
     }
 
     /**
@@ -178,7 +174,7 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) autonomousCommand.cancel();
+        
         System.out.println("Teleop init starting");
         sameTime.start();
         
