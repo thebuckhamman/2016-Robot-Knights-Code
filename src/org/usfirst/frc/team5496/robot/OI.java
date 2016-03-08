@@ -20,27 +20,6 @@ public class OI {
 	 */
 	public Joystick myJoystick2 = new Joystick(1);
 
-	/**
-	 * Ramp pitch controllr
-	 */
-	public CANTalon RampTalon = new CANTalon(1);
-	/**
-	 * Intake wheel
-	 */
-	public CANTalon IntakeTalon = new CANTalon(4);
-	/**
-	 * Assists loading and firing
-	 */
-	public CANTalon OutakeTalon = new CANTalon(0);
-	/**
-	 * Bottom firing motor
-	 */
-	public CANTalon bottomShootTalon = new CANTalon(2);
-	/**
-	 * Top firing motor
-	 */
-	public CANTalon topShootTalon = new CANTalon(3);
-
 	public Encoder enc = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
 
 	/**

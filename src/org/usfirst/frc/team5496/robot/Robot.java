@@ -5,6 +5,7 @@ import org.usfirst.frc.team5496.robot.commands.DriveRobotUseRamp;
 import org.usfirst.frc.team5496.robot.commands.SampleGoalImage;
 import org.usfirst.frc.team5496.robot.commands.UseRamp;
 import org.usfirst.frc.team5496.robot.subsystems.Drive;
+import org.usfirst.frc.team5496.robot.subsystems.Ramp;
 import org.usfirst.frc.team5496.robot.subsystems.camera;
 
 import com.ni.vision.NIVision;
@@ -29,11 +30,15 @@ public class Robot extends IterativeRobot {
 	 */
 	public static OI oi;
 
-	public static Drive drive;
-
+	/**
+	 * Used to control the firing ramp
+	 */
+	public static Ramp ramp; 
+	
 	/**
 	 * Used to control the left and right tank treads.
 	 */
+	public static Drive drive;
 
 	/**
 	 * Used to control camera
@@ -84,7 +89,8 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		oi = new OI();
 		drive = new Drive();
-
+		ramp = new Ramp();
+		
 		try {
 			cam = new camera();
 		} catch (Exception e) {

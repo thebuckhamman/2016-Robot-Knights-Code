@@ -17,12 +17,12 @@ public class UseRamp extends Command {
 	public UseRamp() {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
+		requires(Robot.ramp);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		boolean shootStarting = false;
-		double time;
+		shootStarting = false;
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -70,44 +70,44 @@ public class UseRamp extends Command {
 			 * if(Robot.oi.enc.get() > -35) {
 			 */
 			// System.out.println(Robot.oi.enc.get());
-			Robot.oi.RampTalon.set(-1);
+			Robot.ramp.setRampTalonSpeed(-1);
 			/*
 			 * } Robot.oi.RampTalon.set(-0.3);
 			 */
 		} else {
-			Robot.oi.RampTalon.set(0);
+			Robot.ramp.setRampTalonSpeed(0);
 		}
 
 		if (Robot.oi.myJoystick1.getRawButton(5) && Robot.oi.myJoystick1.getRawButton(6)) {
-			Robot.oi.topShootTalon.set(-1);
-			Robot.oi.bottomShootTalon.set(0.65);
+			Robot.ramp.setTopShootTalonSpeed(-1);
+			Robot.ramp.setBottomShootTalonSpeed(0.65);
 			if (!shootStarting) {
 				time = Timer.getMatchTime();
 				shootStarting = true;
 			}
 			// System.out.println("shooting");
 		} else {
-			Robot.oi.topShootTalon.set(0);
-			Robot.oi.bottomShootTalon.set(0);
+			Robot.ramp.setTopShootTalonSpeed(0);
+			Robot.ramp.setBottomShootTalonSpeed(0);
 			// System.out.println("stopped");
 		}
 
 		if (Robot.oi.myJoystick2.getRawButton(5)) {
-			Robot.oi.OutakeTalon.set(0.5);
+			Robot.ramp.setOuttakeTalonSpeed(0.5);
 			// System.out.println(Timer.getMatchTime());
 			shootStarting = false;
 		} else if (Robot.oi.myJoystick2.getRawAxis(2) > 0.8) {
-			Robot.oi.OutakeTalon.set(-0.3);
+			Robot.ramp.setOuttakeTalonSpeed(-0.3);
 		} else {
-			Robot.oi.OutakeTalon.set(0);
+			Robot.ramp.setOuttakeTalonSpeed(0);
 		}
 
 		if (Robot.oi.myJoystick2.getRawButton(6)) {
-			Robot.oi.IntakeTalon.set(-0.5);
+			Robot.ramp.setIntakeTalonSpeed(-0.5);
 		} else if (Robot.oi.myJoystick2.getRawAxis(3) > 0.8) {
-			Robot.oi.IntakeTalon.set(0.5);
+			Robot.ramp.setIntakeTalonSpeed(0.5);
 		} else {
-			Robot.oi.IntakeTalon.set(0);
+			Robot.ramp.setIntakeTalonSpeed(0);
 		}
 	}
 
