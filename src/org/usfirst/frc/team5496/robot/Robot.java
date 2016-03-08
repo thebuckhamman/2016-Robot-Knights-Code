@@ -5,7 +5,6 @@ import org.usfirst.frc.team5496.robot.commands.SameTime;
 import org.usfirst.frc.team5496.robot.commands.SampleGoalImage;
 import org.usfirst.frc.team5496.robot.commands.UseRamp;
 import org.usfirst.frc.team5496.robot.subsystems.Drive;
-import org.usfirst.frc.team5496.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5496.robot.subsystems.camera;
 
 import com.ni.vision.NIVision;
@@ -35,7 +34,7 @@ public class Robot extends IterativeRobot {
 	/**
 	 * Used to control the left and right tank treads.
 	 */
-	public static DriveTrain driveTrain = new DriveTrain();
+
 	/**
 	 * Used to control camera
 	 */
