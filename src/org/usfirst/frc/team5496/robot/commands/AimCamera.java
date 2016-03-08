@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class AimCamera extends Command {
 	int bigParticleIndex = -1;
 	double bigParticleArea = 0;
+	int numParticles = 0;
 	
 	int firstx;
 	int firsty;
@@ -21,6 +22,7 @@ public class AimCamera extends Command {
 	boolean robotLeft;
 	boolean robotGood;
 	
+	int pixelErrorRange;
 	NIVision.Point firstPoint;
 	
     public AimCamera() {
@@ -30,6 +32,7 @@ public class AimCamera extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	pixelErrorRange = 5;
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -41,7 +44,7 @@ public class AimCamera extends Command {
 				camera.TOTE_SAT_RANGE, 
 				camera.TOTE_VAL_RANGE);
     	
-    	int numParticles = NIVision.imaqCountParticles(camera.frame2, 1);
+    	numParticles = NIVision.imaqCountParticles(camera.frame2, 1);
 		
 		for(int particleIndex = 0; particleIndex < numParticles; particleIndex++)
 		{
@@ -57,7 +60,7 @@ public class AimCamera extends Command {
     	firsty = (int)NIVision.imaqMeasureParticle(camera.frame2, bigParticleIndex, 1, NIVision.MeasurementType.MT_FIRST_PIXEL_Y);
     	firstPoint = new NIVision.Point(firstx, firsty);
     	
-    	if(firsty >= (int)NIVision.imaqMeasureParticle(camera.frame2, bigParticleIndex, 1, NIVision.MeasurementType.MT_BOUNDING_RECT_TOP) - 5)
+    	if(firsty >= (int)NIVision.imaqMeasureParticle(camera.frame2, bigParticleIndex, 1, NIVision.MeasurementType.MT_BOUNDING_RECT_TOP) + 5)
     	{
     		robotRight = true;
     	}
