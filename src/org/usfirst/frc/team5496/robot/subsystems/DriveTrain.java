@@ -16,6 +16,7 @@ public class DriveTrain extends Subsystem {
     /**
      * Set the speed for the right talons
      * @param rightYValue the new value of the right talons
+     * @return Value to set the right talons to
      */
     public double rightSpeed(double rightYValue)
     {	
@@ -37,6 +38,7 @@ public class DriveTrain extends Subsystem {
     /**
      * Set the speed for the left talons
      * @param leftYValue thew new value of the left talons
+     * @return Value to set the left talons to
      */
     public double leftSpeed(double leftYValue)
     {

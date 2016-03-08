@@ -47,10 +47,12 @@ public class DriveRobot extends Command {
     		turboheld = false;
     	}
         */
-    	Robot.oi.leftDriveTalon1.set(-Robot.driveTrain.leftSpeed(lefty));
-    	Robot.oi.leftDriveTalon2.set(-Robot.driveTrain.leftSpeed(lefty));
-    	Robot.oi.rightDriveTalon1.set(Robot.driveTrain.rightSpeed(righty) * 0.92);
-    	Robot.oi.rightDriveTalon2.set(Robot.driveTrain.rightSpeed(righty) * 0.92);
+    	double leftSpeed = -Robot.driveTrain.leftSpeed(lefty);
+    	double rightSpeed = Robot.driveTrain.rightSpeed(righty) * 0.92;
+    	Robot.oi.leftDriveTalon1.set(leftSpeed);
+    	Robot.oi.leftDriveTalon2.set(leftSpeed);
+    	Robot.oi.rightDriveTalon1.set(rightSpeed);
+    	Robot.oi.rightDriveTalon2.set(rightSpeed);
     	
     }
 
